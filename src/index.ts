@@ -1,9 +1,10 @@
+#!/usr/bin/env node
 import * as spawn from 'cross-spawn'
 import * as path from 'path'
 import * as process from 'process'
 import devPkg from './devPkg'
 
-const folderName = 'xiong'
+const folderName = process.argv[2] || 'xiong_ts_project'
 const projectDir = path.resolve(process.cwd(), folderName)
 const templateDir = path.resolve(__dirname, '../template').concat('/.')
 
@@ -19,7 +20,9 @@ const createNewProject = () => {
   // 初始化git
   spawn.sync('git', ['init'])
   // 安装npm包
+  console.log('开始安装npm包')
   spawn.sync('npm', ['install', '--save-dev', ...devPkg])
+  console.log('结束安装npm包')
 }
 
 createNewProject()
