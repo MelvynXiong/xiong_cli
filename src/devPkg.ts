@@ -1,5 +1,10 @@
 // ts类型声明文件包
-const typesPkg = ['@types/react', '@types/react-router', '@types/node']
+const typesPkg = [
+  '@types/react',
+  '@types/react-router',
+  '@types/node',
+  '@types/jest',
+]
 // 代码风格检查工具包
 const lintPkg = ['prettier', 'tslint', 'tslint-config-prettier']
 // webpack 插件和loader
@@ -12,6 +17,8 @@ export const webpackPkg = [
   ...pluginPkg,
   ...loaderPkg,
 ]
+// 测试工具包
+export const testPkg = ['jest', 'ts-jest']
 export const tsPkg = [...typesPkg, ...lintPkg, 'typescript']
 export const serverPkg = [
   'express',
@@ -20,4 +27,4 @@ export const serverPkg = [
   'webpack-dev-middleware',
   'webpack-hot-middleware',
 ]
-export default [...webpackPkg, ...tsPkg, ...serverPkg]
+export default [...webpackPkg, ...tsPkg, ...serverPkg, ...testPkg]
