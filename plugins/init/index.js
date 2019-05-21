@@ -1,9 +1,11 @@
-#!/usr/bin/env node
-const spawn = require('cross-spawn')
-const path = require('path')
-const process = require('process')
-const devPkg = require('./devPkg')
 
+function initTsProject() {
+  console.log('initTsProject')
+}
+module.exports = {
+  command: 'init',
+  handler: initTsProject,
+}
 const folderName = process.argv[2] || 'xiong_ts_project'
 const projectDir = path.resolve(process.cwd(), folderName)
 const templateDir = path.resolve(__dirname, '../template').concat('/.')
@@ -24,7 +26,3 @@ const createNewProject = () => {
   spawn.sync('npm', ['install', '--save-dev', ...devPkg])
   console.log('结束安装npm包')
 }
-
-//createNewProject()
-console.log(folderName)
-console.log(devPkg)
