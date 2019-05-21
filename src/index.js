@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import * as spawn from 'cross-spawn'
-import * as path from 'path'
-import * as process from 'process'
-import devPkg from './devPkg'
+const spawn = require('cross-spawn')
+const path = require('path')
+const process = require('process')
+const devPkg = require('./devPkg')
 
 const folderName = process.argv[2] || 'xiong_ts_project'
 const projectDir = path.resolve(process.cwd(), folderName)
@@ -25,4 +25,6 @@ const createNewProject = () => {
   console.log('结束安装npm包')
 }
 
-createNewProject()
+//createNewProject()
+console.log(folderName)
+console.log(devPkg)

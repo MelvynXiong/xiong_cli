@@ -1,7 +1,7 @@
 ## xiong's front-end utils
 ### 使用
 ```
-xiong <项目名称>
+fex <项目名称>
 ```
 - 自动化新建一个ts前端项目，工具包预先装好
 
