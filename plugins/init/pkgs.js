@@ -27,4 +27,9 @@ const serverPkg = [
   'webpack-dev-middleware',
   'webpack-hot-middleware',
 ]
-module.exports = [...webpackPkg, ...tsPkg, ...serverPkg, ...testPkg]
+
+const devPkgs = [...webpackPkg, ...tsPkg, ...serverPkg, ...testPkg]
+
+module.exports = {
+  devPkgs,
+}
